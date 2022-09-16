@@ -222,9 +222,7 @@ export class Auth {
 
   getSession: GetSession = async (event: RequestEvent) => {
     const { request } = event;
-    // console.log(event);
-    // console.log("\n...........................................................\n");
-    // console.log(request);
+
     const token = await this.getToken(request.headers);
 
     if (token) {
@@ -233,6 +231,20 @@ export class Auth {
       }
 
       return { user: token.user };
+    }
+
+    //return {};
+    //if the token isn't valid then just return null
+    return null;
+  };
+
+  getSessionProperty = async (event: RequestEvent, property: string) => {
+    const { request } = event;
+
+    const token = await this.getToken(request.headers);
+
+    if (token) {
+      return token.user[property];
     }
 
     //return {};
