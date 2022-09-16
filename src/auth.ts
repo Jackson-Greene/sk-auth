@@ -194,7 +194,7 @@ export class Auth {
     if (url.pathname === this.getPath("csrf")) {
       return { body: "1234" }; // TODO: Generate real token
     } else if (url.pathname === this.getPath("session")) {
-      console.log("this is in the get function");
+      //console.log("this is in the get function");
       const session = await this.getSession(event);
       return {
         body: {
@@ -204,10 +204,10 @@ export class Auth {
     }
     //need to return a Response object?
     //return await this.handleEndpoint(event);
-    console.log("Here");
+    //console.log("Here");
     //console.log(await this.handleEndpoint(event));
     const res = await this.handleEndpoint(event);
-    console.log(res);
+    //console.log(res);
     //return new Response(JSON.stringify(this.handleEndpoint(event)));
     //return Response.redirect(res.headers.Location, 302);
     //new Response(undefined, { headers: { Location: res.headers.Location }, status: 302 });
@@ -222,6 +222,8 @@ export class Auth {
 
   getSession: GetSession = async (event: RequestEvent) => {
     const { request } = event;
+    console.log(event);
+    console.log("\n...........................................................\n");
     console.log(request);
     //   const token = await this.getToken(request.headers);
 
