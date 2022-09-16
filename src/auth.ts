@@ -204,6 +204,8 @@ export class Auth {
     }
     //need to return a Response object?
     //return await this.handleEndpoint(event);
+    console.log("Here");
+    console.log(this.handleEndpoint(event));
     return new Response(JSON.stringify(this.handleEndpoint(event)));
   };
 
