@@ -235,6 +235,8 @@ export class Auth {
       return { user: token.user };
     }
 
-    return {};
+    //return {};
+    //if the token isn't valid then just return null
+    return null;
   };
 }
