@@ -211,7 +211,7 @@ export class Auth {
     //return new Response(JSON.stringify(this.handleEndpoint(event)));
     //return Response.redirect(res.headers.Location, 302);
     //new Response(undefined, { headers: { Location: res.headers.Location }, status: 302 });
-    new Response(undefined, { headers: { ...res.headers }, status: 302 });
+    return new Response(undefined, { headers: { ...res.headers }, status: 302 });
   };
 
   POST: RequestHandler = async (event: RequestEvent) => {
