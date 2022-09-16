@@ -221,17 +221,18 @@ export class Auth {
   };
 
   getSession: GetSession = async (event: RequestEvent) => {
-    const { request } = event;
-    const token = await this.getToken(request.headers);
+    console.log(event);
+  //   const { request } = event;
+  //   const token = await this.getToken(request.headers);
 
-    if (token) {
-      if (this.config?.callbacks?.session) {
-        return await this.config.callbacks.session(token, { user: token.user });
-      }
+  //   if (token) {
+  //     if (this.config?.callbacks?.session) {
+  //       return await this.config.callbacks.session(token, { user: token.user });
+  //     }
 
-      return { user: token.user };
-    }
+  //     return { user: token.user };
+  //   }
 
-    return {};
-  };
+  //   return {};
+  // };
 }
