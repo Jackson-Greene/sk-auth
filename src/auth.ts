@@ -205,8 +205,11 @@ export class Auth {
     //need to return a Response object?
     //return await this.handleEndpoint(event);
     console.log("Here");
-    console.log(await this.handleEndpoint(event));
-    return new Response(JSON.stringify(this.handleEndpoint(event)));
+    //console.log(await this.handleEndpoint(event));
+    const res = await this.handleEndpoint(event);
+    console.log(res);
+    //return new Response(JSON.stringify(this.handleEndpoint(event)));
+    return Response.redirect(res.headers.Location, 302);
   };
 
   POST: RequestHandler = async (event: RequestEvent) => {
