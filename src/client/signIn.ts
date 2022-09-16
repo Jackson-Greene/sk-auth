@@ -19,6 +19,7 @@ export async function signIn(provider: string, data?: any, config?: SignInConfig
       body: JSON.stringify(data),
     });
     return await res.json();
+    //return await new Response(JSON.stringify(res.json()));
   }
 
   let redirectUrl: string | undefined;

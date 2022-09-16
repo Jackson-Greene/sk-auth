@@ -202,12 +202,15 @@ export class Auth {
         },
       };
     }
-
-    return await this.handleEndpoint(event);
+    //need to return a Response object?
+    //return await this.handleEndpoint(event);
+    return new Response(JSON.stringify(this.handleEndpoint(event)));
   };
 
   POST: RequestHandler = async (event: RequestEvent) => {
-    return await this.handleEndpoint(event);
+    //need to return a Response object?
+    //return await this.handleEndpoint(event);
+    return new Response(JSON.stringify(this.handleEndpoint(event)));
   };
 
   getSession: GetSession = async (event: RequestEvent) => {
