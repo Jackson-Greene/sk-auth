@@ -194,6 +194,7 @@ export class Auth {
     if (url.pathname === this.getPath("csrf")) {
       return { body: "1234" }; // TODO: Generate real token
     } else if (url.pathname === this.getPath("session")) {
+      console.log("this is in the get function");
       const session = await this.getSession(event);
       return {
         body: {
