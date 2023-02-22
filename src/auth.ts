@@ -244,7 +244,10 @@ export class Auth {
     const token = await this.getToken(request.headers);
 
     if (token) {
-      return token.user[property];
+      if(token.user)
+      {
+        return token.user[property];
+      }
     }
 
     //return {};
